@@ -1,4 +1,4 @@
-package com.musallam.dpd_userapp
+package kw.musallam.delivery
 
 import android.app.Activity
 import android.os.Build
