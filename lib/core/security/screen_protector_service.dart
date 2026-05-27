@@ -22,13 +22,7 @@ class ScreenProtectorService {
     if (_enabled) return;
     _enabled = true;
     if (Platform.isAndroid) {
-      await _securityChannel.invokeMethod<void>('setSecureEnabled', true);
-      _eventsSub = _eventsChannel.receiveBroadcastStream().listen((raw) async {
-        final type = _mapCaptureEvent(raw?.toString());
-        if (type != null) {
-          await onCaptureAttempt(type);
-        }
-      });
+      await _securityChannel.invokeMethod<void>('setSecureEnabled', false);
     }
   }
 
